@@ -5,15 +5,14 @@ import java.io.File
 fun main(){
     val bufferedReader = File("src/main/kotlin/D3/input.txt").bufferedReader()
     var totalScore = 0
-    val array = mutableListOf<CharArray>()
+    val array = mutableListOf<Set<Char>>()
 
     bufferedReader.useLines { lines ->
         lines.forEach { l ->
             if(l.isNotEmpty()) {
-                val line = l.toCharArray()
+                val line = l.toCharArray().toSet()
                 if (array.size == 2) {
-                    val sets = array.map { l -> l.toSet() }
-                    val charIntersect = (sets[0] intersect sets[1] intersect sets[2]).first()
+                    val charIntersect = (array[0] intersect array[1] intersect array[2]).first()
                     totalScore += if (charIntersect in 'a'..'z') (charIntersect - 96).code else (charIntersect - 38).code
                     array.clear()
                 }else{
