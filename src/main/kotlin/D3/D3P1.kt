@@ -5,7 +5,6 @@ import java.io.File
 fun main(){
     val bufferedReader = File("src/main/kotlin/D3/input.txt").bufferedReader()
     var totalScore = 0
-    var count = 0
 
     bufferedReader.useLines { lines ->
         lines.forEach { l ->
