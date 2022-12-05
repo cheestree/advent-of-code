@@ -1,0 +1,8 @@
+# Inputs #
+##########
+*.txt
+
+# System files #
+.gradle
+.idea
+build

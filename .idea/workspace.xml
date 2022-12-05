@@ -55,20 +55,14 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/Daniel Carvalho/Documents/Misc/AdventOfCode2022"
   }
-}</component>
-  <component name="RunManager" selected="Kotlin.D3P2Kt">
-    <configuration name="D2P1Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="D2.D2P1Kt" />
-      <module name="AdventOfCode2022.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+}]]></component>
+  <component name="RunManager" selected="Kotlin.D4P2Kt">
     <configuration name="D2P2Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="D2.D2P2Kt" />
       <module name="AdventOfCode2022.main" />
@@ -90,12 +84,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="D4P1Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="D4.D4P1Kt" />
+      <module name="AdventOfCode2022.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="D4P2Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="D4.D4P2Kt" />
+      <module name="AdventOfCode2022.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.D4P2Kt" />
+        <item itemvalue="Kotlin.D4P1Kt" />
         <item itemvalue="Kotlin.D3P2Kt" />
         <item itemvalue="Kotlin.D3P1Kt" />
         <item itemvalue="Kotlin.D2P2Kt" />
-        <item itemvalue="Kotlin.D2P1Kt" />
       </list>
     </recent_temporary>
   </component>
