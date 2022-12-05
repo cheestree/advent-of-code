@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47abba03-4d6f-433d-8f9c-d64b6bc8e5be" name="Changes" comment="D2 done, sadly with switch case :(" />
+    <list default="true" id="47abba03-4d6f-433d-8f9c-d64b6bc8e5be" name="Changes" comment="D2 done, sadly with switch case :(">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/D5/D5P1.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/D5/D5P2.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/D4/D4P1.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/D4/D4P1.kt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,17 +64,15 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "C:/Users/Daniel Carvalho/Documents/Misc/AdventOfCode2022"
+    "last_opened_file_path": "C:/Users/Daniel Carvalho/Documents/Misc/AdventOfCode2022/src/main/kotlin"
   }
 }]]></component>
-  <component name="RunManager" selected="Kotlin.D4P2Kt">
-    <configuration name="D2P2Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="D2.D2P2Kt" />
-      <module name="AdventOfCode2022.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Daniel Carvalho\Documents\Misc\AdventOfCode2022\src\main\kotlin" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Kotlin.D5P1Kt (1)">
     <configuration name="D3P1Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="D3.D3P1Kt" />
       <module name="AdventOfCode2022.main" />
@@ -84,13 +87,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="D4P1Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="D4.D4P1Kt" />
-      <module name="AdventOfCode2022.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="D4P2Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="D4.D4P2Kt" />
       <module name="AdventOfCode2022.main" />
@@ -98,13 +94,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="D5P1Kt (1)" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="D5.D5P1Kt" />
+      <module name="AdventOfCode2022.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="D5P1Kt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="D4.D5P1Kt" />
+      <module name="AdventOfCode2022.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Kotlin.D5P1Kt (1)" />
+        <item itemvalue="Kotlin.D5P1Kt" />
         <item itemvalue="Kotlin.D4P2Kt" />
-        <item itemvalue="Kotlin.D4P1Kt" />
         <item itemvalue="Kotlin.D3P2Kt" />
         <item itemvalue="Kotlin.D3P1Kt" />
-        <item itemvalue="Kotlin.D2P2Kt" />
       </list>
     </recent_temporary>
   </component>
