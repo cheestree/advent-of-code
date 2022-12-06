@@ -4,7 +4,7 @@ import java.io.File
 
 fun main(){
     val timeStart = System.currentTimeMillis()
-    val bufferedReader = File("src/main/kotlin/D5/aoc_2022_day05_large_input.txt").bufferedReader()
+    val bufferedReader = File("src/main/kotlin/D5/input.txt").bufferedReader()
     val stackLists = mutableListOf<MutableList<String>>(mutableListOf())
 
     bufferedReader.useLines { lines ->
