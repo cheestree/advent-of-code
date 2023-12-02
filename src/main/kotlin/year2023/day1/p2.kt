@@ -18,12 +18,11 @@ val numbersStringToInt: HashMap<String, Int> = hashMapOf(
 fun trebuchet2(path: String): Int{
     val file = File(path)
     var sum = 0
+    var currentIndex = 0
+    val numericValues = mutableListOf<Int>()
+    var foundMatch = false
     file.forEachLine {
-        var currentIndex = 0
-        val numericValues = mutableListOf<Int>()
-
         while (currentIndex < it.length) {
-            var foundMatch = false
             if(it[currentIndex].isDigit() && numbersToInt.containsKey(it[currentIndex])) {
                 numericValues.add(numbersToInt[it[currentIndex]]!!)
                 currentIndex++
@@ -40,10 +39,11 @@ fun trebuchet2(path: String): Int{
                     currentIndex++
                 }
             }
+            foundMatch = false
         }
-        val first = numericValues.first()
-        val last = numericValues.last()
-        sum += first*10 + last
+        sum += numericValues.first()*10 + numericValues.last()
+        currentIndex = 0
+        numericValues.clear()
     }
     return sum
 }

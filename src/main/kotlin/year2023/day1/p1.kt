@@ -21,9 +21,7 @@ fun trebuchet(path: String): Int{
     var resultingFilter: String
     file.forEachLine {
         resultingFilter = it.filter { it.isDigit() }
-        val first = numbersToInt[resultingFilter.first()]!!
-        val last = numbersToInt[resultingFilter.last()]!!
-        sum += first*10 + last
+        sum += resultingFilter.first().digitToInt()*10 + resultingFilter.last().digitToInt()
     }
     return sum
 }
