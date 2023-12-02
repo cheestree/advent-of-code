@@ -1,10 +1,10 @@
-package day1
+package year2022.day1
 
 import java.io.File
 
 fun main() {
 
-    val bufferedReader = File("src/main/kotlin/D1/input.txt").bufferedReader()
+    val bufferedReader = File("src/main/kotlin/y2022.D1/input.txt").bufferedReader()
     var bigElf = 0
     var bigCal = 0
     var currElf = 1

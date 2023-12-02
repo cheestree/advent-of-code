@@ -1,10 +1,10 @@
-package D5
+package year2022.day5
 
 import java.io.File
 
 fun main(){
     val timeStart = System.currentTimeMillis()
-    val bufferedReader = File("src/main/kotlin/D5/input.txt").bufferedReader()
+    val bufferedReader = File("src/main/kotlin/y2022.D5/input.txt").bufferedReader()
     val stackLists = mutableListOf<MutableList<String>>(mutableListOf())
 
     bufferedReader.useLines { lines ->
@@ -42,7 +42,7 @@ fun main(){
                         //println("Amount -> $amount")
                         val end = stackLists[stackData[5].toInt()-1]
                         //println("To -> $end")
-                        end.addAll(0,source.take(amount.toInt()).reversed())
+                        end.addAll(0,source.take(amount.toInt()))
                         stackLists[stackData[3].toInt()-1] = source.drop(amount.toInt()).toMutableList()
                         //println("Result ->")
                         //stackLists.forEach { print(" $it ") }

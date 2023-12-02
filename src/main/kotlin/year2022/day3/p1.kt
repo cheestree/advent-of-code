@@ -1,9 +1,9 @@
-package D3
+package year2022.day3
 
 import java.io.File
 
 fun main(){
-    val bufferedReader = File("src/main/kotlin/D3/input.txt").bufferedReader()
+    val bufferedReader = File("src/main/kotlin/y2022.D3/input.txt").bufferedReader()
     var totalScore = 0
 
     bufferedReader.useLines { lines ->
