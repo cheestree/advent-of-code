@@ -21,15 +21,13 @@ fun trebuchet(path: String): Int{
     var resultingFilter: String
     file.forEachLine {
         resultingFilter = it.filter { it.isDigit() }
-        sum += if(resultingFilter.length==1){
-            numbersToInt[resultingFilter[0]]!!*10 + numbersToInt[resultingFilter[0]]!!
-        }else{
-            numbersToInt[resultingFilter[0]]!!*10 + numbersToInt[resultingFilter.last()]!!
-        }
+        val first = numbersToInt[resultingFilter.first()]!!
+        val last = numbersToInt[resultingFilter.last()]!!
+        sum += first*10 + if(resultingFilter.length==1){ first }else{ last }
     }
     return sum
 }
 
 fun main(){
-    println(trebuchet("src/main/kotlin/Y2023/day1/input.txt"))
+    println(trebuchet("src/main/kotlin/year2023/day1/input.txt"))
 }

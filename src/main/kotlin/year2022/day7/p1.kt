@@ -3,7 +3,7 @@ package year2022.day7
 /*
 fun main() {
 
-    val bufferedReader = File("src/main/kotlin/y2022.D7/input.txt").bufferedReader()
+    val bufferedReader = File("src/main/kotlin/year2022/day7/input.txt").bufferedReader()
     var memUsed = 0
     var previousOp = ""
     val directories = mutableListOf<FileDummy>()

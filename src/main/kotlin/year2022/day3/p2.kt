@@ -3,7 +3,7 @@ package year2022.day3
 import java.io.File
 
 fun main(){
-    val bufferedReader = File("src/main/kotlin/y2022.D3/input.txt").bufferedReader()
+    val bufferedReader = File("src/main/kotlin/year2022/day3/input.txt").bufferedReader()
     var totalScore = 0
     val array = mutableListOf<Set<Char>>()
 

@@ -4,7 +4,7 @@ import java.io.File
 
 fun main() {
 
-    val bufferedReader = File("src/main/kotlin/D3/input.txt").bufferedReader()
+    val bufferedReader = File("src/main/kotlin/year2022/day3/input.txt").bufferedReader()
     var listsOfUnCommon = mutableListOf<MutableList<Int>>()
     var oxyGenRating = ""
     var coScrubRating = ""

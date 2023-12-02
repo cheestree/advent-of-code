@@ -3,7 +3,7 @@ package year2022.day1
 import java.io.File
 
 fun main() {
-    val bufferedReader = File("C:\\Users\\Daniel Carvalho\\Documents\\Misc\\AoE2022\\AdventOfCode2022\\src\\main\\kotlin\\day1\\input.txt").bufferedReader()
+    val bufferedReader = File("src/main/kotlin/year2022/day1/input.txt").bufferedReader()
     var currElf = 1
     var currCal = 0
     val elfTrio = mutableListOf(0,0,0)

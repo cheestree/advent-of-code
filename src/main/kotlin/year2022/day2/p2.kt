@@ -3,7 +3,7 @@ package year2022.day2
 import java.io.File
 
 fun main(){
-    val bufferedReader = File("src/main/kotlin/y2022.D2/input.txt").bufferedReader()
+    val bufferedReader = File("src/main/kotlin/year2022/day2/input.txt").bufferedReader()
     var ally = 0
     //Rock (0), paper (1), scissor (2)
     //Lose, draw, win

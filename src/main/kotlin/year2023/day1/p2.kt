@@ -2,7 +2,7 @@ package year2023.day1
 
 import java.io.File
 
-val numbersStringToInt: LinkedHashMap<String, Int> = linkedMapOf(
+val numbersStringToInt: HashMap<String, Int> = hashMapOf(
     "zero" to 0,
     "one" to 1,
     "two" to 2,
@@ -24,8 +24,8 @@ fun trebuchet2(path: String): Int{
 
         while (currentIndex < it.length) {
             var foundMatch = false
-            if(it[currentIndex].isDigit()) {
-                numbersToInt[it[currentIndex]]?.let { it1 -> numericValues.add(it1) }
+            if(it[currentIndex].isDigit() && numbersToInt.containsKey(it[currentIndex])) {
+                numericValues.add(numbersToInt[it[currentIndex]]!!)
                 currentIndex++
             }else {
                 for (entry in numbersStringToInt) {
@@ -41,11 +41,13 @@ fun trebuchet2(path: String): Int{
                 }
             }
         }
-        sum += if(numericValues.size==1) numericValues.first() * 10 + numericValues.first() else numericValues.first() * 10 + numericValues.last()
+        val first = numericValues.first()
+        val last = numericValues.last()
+        sum += first*10 + if(numericValues.size==1){ first }else{ last }
     }
     return sum
 }
 
 fun main(){
-    println(trebuchet2("src/main/kotlin/Y2023/day1/input.txt"))
+    println(trebuchet2("src/main/kotlin/year2023/day1/input.txt"))
 }

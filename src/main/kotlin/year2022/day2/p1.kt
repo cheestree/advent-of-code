@@ -4,7 +4,7 @@ import java.io.File
 import kotlin.math.absoluteValue
 
 fun main(){
-    val bufferedReader = File("src/main/kotlin/y2022.D2/input.txt").bufferedReader()
+    val bufferedReader = File("src/main/kotlin/year2022/day2/input.txt").bufferedReader()
     var enemy = 0
     var ally = 0
     //Rock, paper, scissor
