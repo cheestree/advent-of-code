@@ -23,7 +23,7 @@ fun trebuchet(path: String): Int{
         resultingFilter = it.filter { it.isDigit() }
         val first = numbersToInt[resultingFilter.first()]!!
         val last = numbersToInt[resultingFilter.last()]!!
-        sum += first*10 + if(resultingFilter.length==1){ first }else{ last }
+        sum += first*10 + last
     }
     return sum
 }

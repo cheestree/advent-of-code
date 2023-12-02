@@ -43,7 +43,7 @@ fun trebuchet2(path: String): Int{
         }
         val first = numericValues.first()
         val last = numericValues.last()
-        sum += first*10 + if(numericValues.size==1){ first }else{ last }
+        sum += first*10 + last
     }
     return sum
 }
