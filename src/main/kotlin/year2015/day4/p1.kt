@@ -4,16 +4,17 @@ import java.io.File
 import java.math.BigInteger
 import java.security.MessageDigest
 
-fun theIdealStockingStuffer(): Int{
+fun theIdealStockingStuffer(isFirstHalf: Boolean): Int{
     val file = File("src/main/kotlin/year2015/day4/input.txt")
     val input = file.readLines()[0]
-    var hash = ""
+    var hash: String
     var counter = 0
-    while (!hash.startsWith("00000")){
+    while (true){
         hash = md5(input+counter)
+        if(hash.startsWith("00000") && isFirstHalf) break
+        if(hash.startsWith("000000") && !isFirstHalf) break
         counter++
     }
-    println(hash)
     return counter
 }
 
@@ -23,5 +24,5 @@ fun md5(input:String): String {
 }
 
 fun main(){
-    println(theIdealStockingStuffer())
+    println(theIdealStockingStuffer(true))
 }
