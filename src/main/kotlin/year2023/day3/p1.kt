@@ -2,11 +2,7 @@ package year2023.day3
 
 import java.io.File
 
-data class Present(val row: Int, val column: Int, val value: String){
-    fun isNumeric(): Boolean {
-        return value.all { char -> char.isDigit() }
-    }
-}
+data class Present(val row: Int, val column: Int, val value: String)
 
 
 fun gearRatios(): Int{

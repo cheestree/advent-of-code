@@ -1,5 +1,6 @@
 package year2023.day3
 
+import utils.isNumeric
 import java.io.File
 
 fun gearRatios2(): Int{
@@ -15,7 +16,7 @@ fun gearRatios2(): Int{
     }
     symbols.forEach { singleGear ->
         val symbolsAround = symbols.filter {
-            it.isNumeric() &&
+            it.value.isNumeric() &&
             it.row in singleGear.row-1..singleGear.row+1
                     && it.column in singleGear.column-it.value.length..singleGear.column+singleGear.value.length
         }
