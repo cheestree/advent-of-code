@@ -2,52 +2,19 @@ package year2023.day7
 
 import java.io.File
 
-data class Hand(val hand: String, val bid: Int) {
-    var handValue = hand.map { CARD_VALUES.indexOf(it).toString() }.joinToString("")
-
-    companion object {
-        private val CARD_VALUES = listOf('A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2')
-
-        fun quickSort(handList: List<Hand>): List<Hand> {
-            if (handList.size <= 1) {
-                return handList
-            }
-
-            val pivot = handList[handList.size / 2]
-            val equal = handList.filter { it.handValue == pivot.handValue }
-            val less = handList.filter { compareHands(it, pivot) < 0 }
-            val greater = handList.filter { compareHands(it, pivot) > 0 }
-
-            return quickSort(less) + equal + quickSort(greater)
-        }
-
-        private fun compareHands(hand1: Hand, hand2: Hand): Int {
-            val typeComparison = hand1.type.compareTo(hand2.type)
-            if (typeComparison != 0) {
-                return typeComparison
-            }
-
-            val minLength = minOf(hand1.handValue.length, hand2.handValue.length)
-
-            for (i in 0 until minLength) {
-                val value1 = CARD_VALUES.indexOf(hand1.handValue[i])
-                val value2 = CARD_VALUES.indexOf(hand2.handValue[i])
-
-                if (value1 != value2) {
-                    return value1 - value2
-                }
-            }
-
-            return hand1.handValue.length - hand2.handValue.length
-        }
+data class Hand(val hand: String, val bid: Int){
+    private var type: HAND_TYPE? = null
+    fun checkType(): HAND_TYPE? {
+        type = hand.checkHand()
+        return type
     }
 
-    private val type: HAND_TYPE by lazy { checkType() }
-
-    fun checkType(): HAND_TYPE {
-        return HAND_TYPE.values().firstOrNull { it.check(handValue) } ?: HAND_TYPE.HIGH_CARD
+    override fun toString(): String {
+        return "Hand $hand is a $type, and bid $bid"
     }
 }
+
+val CARD_VALUES = listOf('A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2')
 
 enum class HAND_TYPE {
     FIVE_OF_A_KIND {
@@ -89,6 +56,12 @@ enum class HAND_TYPE {
     abstract fun check(handToCheck: String): Boolean
 }
 
+
+fun String.checkHand(): HAND_TYPE? {
+    if (Regex("([A-Z]|[0-9])\\w+").findAll(this).map { it.value }.count() != 1) return null
+    return HAND_TYPE.values().firstOrNull { it.check(this) }
+}
+
 fun camelCards(): Int{
     val file = File("src/main/kotlin/year2023/day7/input.txt")
     val totalHands = mutableListOf<Hand>()
@@ -96,8 +69,13 @@ fun camelCards(): Int{
     file.forEachLine {
         totalHands.add(Hand(it.split(" ")[0], it.split(" ")[1].toInt()))
     }
-    val sortedHands = Hand.quickSort(totalHands)
-    println(sortedHands)
+    totalHands.sortByDescending {
+        it.checkType()
+    }
+    totalHands.forEachIndexed { index, hand ->
+        totalMoneyWon += hand.bid * (index+1)
+        println(hand)
+    }
     return totalMoneyWon
 }
 
