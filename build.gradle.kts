@@ -16,6 +16,6 @@ repositories {
 }
 
 dependencies {
-    implementation("com.google.guava:guava:31.1-jre")
+    implementation("com.google.guava:guava:32.0.1-android")
     implementation("com.github.nmorel.gwtjackson:gwt-jackson-guava:0.15.4")
 }
