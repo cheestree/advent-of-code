@@ -28,11 +28,11 @@ object D04 : Day<Int, Int> {
     }
 
     override fun p1() : Int {
-        return theIdealStockingStuffer(false)
+        return theIdealStockingStuffer(true)
     }
 
     override fun p2(): Int {
-        return theIdealStockingStuffer(true)
+        return theIdealStockingStuffer(false)
     }
 }
 

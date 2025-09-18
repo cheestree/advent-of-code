@@ -24,8 +24,9 @@ object D05 : Day<Int, Int> {
         val niceStrings = 0
 
         input.forEachLine { line ->
-            val hasDoubleLetter = Regex("(.)\\1").findAll(line).count()
-            //  if(hasDoubleLetter) niceStrings += 1
+            val hasVowels = Regex("[aeiouAEIOU]").findAll(line).count() >= 3
+            val hasForbiddenGroups = Regex("ab|cd|pq|xy").find(line) == null
+            val hasDoubleLetter = Regex("(.)\\1").find(line) != null
         }
 
         return niceStrings
