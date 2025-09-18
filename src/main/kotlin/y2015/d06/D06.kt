@@ -1,15 +1,17 @@
 package y2015.d06
 
+import common.Day
+import common.Utils.readInput
 import java.io.File
 import kotlin.collections.get
 
-object D06 {
+object D06 : Day<Int, Int> {
     //  Dev note: I love this problem :) It's so simple but so cute
 
     const val ROW = 1000
     const val COLUMN = 1000
 
-    data class Lightbulb(var isOn: Boolean){
+    private data class Lightbulb(var isOn: Boolean){
         var brightness = 0
         override fun toString(): String {
             return if(isOn) "☼" else "•"
@@ -28,10 +30,11 @@ object D06 {
         }
     }
 
-    fun probablyAFireHazard(): Int{
-        val file = File("/y2015/d06/input.txt")
+    override fun p1(): Int {
+        val input = readInput()
         val lightGrid = Array(ROW) { Array(COLUMN) { Lightbulb(false) } }
-        file.forEachLine { line ->
+
+        input.forEachLine { line ->
             val operation = line.split(" ")
             val coords = operation.takeLast(3)
             val (xFrom, yFrom) = coords[0].split(",").map { it.toInt() }
@@ -45,14 +48,16 @@ object D06 {
                 }
             }
         }
+
         //  lightGrid.forEach { it.forEach { print(it) }; println() }
         return lightGrid.flatten().count { it.isOn }
     }
 
-    fun probablyAFireHazard2(): Int{
-        val file = File("/y2015/d06/input.txt")
+    override fun p2(): Int {
+        val input = readInput()
         val lightGrid = Array(ROW) { Array(COLUMN) { Lightbulb(false) } }
-        file.forEachLine { line ->
+
+        input.forEachLine { line ->
             val operation = line.split(" ")
             val coords = operation.takeLast(3)
             val (xFrom, yFrom) = coords[0].split(",").map { it.toInt() }
@@ -66,6 +71,7 @@ object D06 {
                 }
             }
         }
+
         return lightGrid.flatten().fold(0){ acc: Int, lightbulb: Lightbulb -> acc + lightbulb.brightness }
     }
 }

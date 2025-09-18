@@ -1,20 +1,22 @@
 package y2023.d03
 
+import common.Day
 import common.Utils.isNumeric
+import common.Utils.readInput
 import java.io.File
 
-object D03 {
-    data class Present(val row: Int, val column: Int, val value: String)
+object D03 : Day<Int, Int> {
+    private data class Present(val row: Int, val column: Int, val value: String)
 
-    fun p1() {
-
-        val file = File("src/main/kotlin/year2023/day3/input.txt")
+    override fun p1(): Int {
+        val input = readInput()
         var sumOfParts = 0
         var lineLength = 0
         val symbols = mutableListOf<Present>()
         val parts = mutableListOf<Present>()
         var lineCount = 0
-        file.forEachLine {
+
+        input.forEachLine {
             if(lineLength==0) lineLength = it.length
             Regex("([^.0-9])").findAll(it).forEach {symbol -> symbols.add(Present(lineCount, symbol.range.first, symbol.value)) }
             Regex("([0-9]+)").findAll(it).forEach {symbol -> parts.add(Present(lineCount, symbol.range.first, symbol.value)) }
@@ -29,17 +31,18 @@ object D03 {
                 sumOfParts += singlePart.value.toInt()
             }
         }
+
         return sumOfParts
     }
 
-    fun p2() {
-
-        val file = File("src/main/kotlin/year2023/day3/input.txt")
+    override fun p2(): Int {
+        val input = readInput()
         var sumOfParts = 0
         var lineLength = 0
         val symbols = mutableListOf<Present>()
         var lineCount = 0
-        file.forEachLine {
+
+        input.forEachLine {
             if(lineLength==0) lineLength = it.length
             Regex("([^.0-9])|([0-9]+)").findAll(it).forEach {symbol -> symbols.add(Present(lineCount, symbol.range.first, symbol.value)) }
             lineCount++
@@ -54,6 +57,7 @@ object D03 {
                 sumOfParts += symbolsAround.fold(1){ acc: Int, present: Present -> acc * present.value.toInt() }
             }
         }
+
         return sumOfParts
     }
 }

@@ -1,12 +1,14 @@
 package y2022.d02
 
+import common.Day
+import common.Utils.readInput
 import java.io.File
 import kotlin.math.absoluteValue
 import kotlin.sequences.forEach
 
-object D02 {
-    fun p1() {
-        val bufferedReader = File("src/main/kotlin/year2022/day2/input.txt").bufferedReader()
+object D02 : Day<Int, Int> {
+    override fun p1(): Int {
+        val input = readInput()
         var enemy = 0
         var ally = 0
         //Rock, paper, scissor
@@ -14,7 +16,7 @@ object D02 {
         val movesAlly = arrayOf(Pair("X", 1),Pair("Y", 2),Pair("Z", 3))
 
 
-        bufferedReader.useLines { lines ->
+        input.useLines { lines ->
             lines.forEach { l ->
                 if(l.isNotEmpty()){
                     val lineArray = l.split(" ")
@@ -48,17 +50,18 @@ object D02 {
                 }
             }
         }
+        return ally
     }
 
-    fun p2() {
-        val bufferedReader = File("src/main/kotlin/year2022/day2/input.txt").bufferedReader()
+    override fun p2(): Int {
+        val input = readInput()
         var ally = 0
         //Rock (0), paper (1), scissor (2)
         //Lose, draw, win
         val movesEnemy = arrayOf(Pair("A", 1),Pair("B", 2),Pair("C", 3))
         val movesAlly = arrayOf(Pair("X", 1),Pair("Y", 2),Pair("Z", 3))
 
-        bufferedReader.useLines { lines ->
+        input.useLines { lines ->
             lines.forEach { l ->
                 if(l.isNotEmpty()){
                     val lineArray = l.split(" ")
@@ -90,6 +93,7 @@ object D02 {
                 }
             }
         }
-        println("You: $ally")
+
+        return ally
     }
 }

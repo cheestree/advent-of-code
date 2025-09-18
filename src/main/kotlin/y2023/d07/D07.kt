@@ -1,10 +1,14 @@
 package y2023.d07
 
+import common.Day
+import common.Utils.readInput
 import java.io.File
 import kotlin.times
 
-object D07 {
-    data class Hand(val hand: String, val bid: Int){
+object D07 : Day<Int, Int> {
+    private val CARD_VALUES = listOf('A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2')
+
+    private data class Hand(val hand: String, val bid: Int){
         private var type: HAND_TYPE? = null
         fun checkType(): HAND_TYPE? {
             type = hand.checkHand()
@@ -16,10 +20,7 @@ object D07 {
         }
     }
 
-    val CARD_VALUES = listOf('A', 'K', 'Q', 'J', 'T', '9', '8', '7', '6', '5', '4', '3', '2')
-
-
-    enum class HAND_TYPE {
+    private enum class HAND_TYPE {
         FIVE_OF_A_KIND {
             override fun check(handToCheck: String): Boolean {
                 return handToCheck.groupBy { it }.count() == 1
@@ -65,11 +66,12 @@ object D07 {
     }
 
 
-    fun p1() {
-        val file = File("src/main/kotlin/year2023/day7/input.txt")
+    override fun p1(): Int {
+        val input = readInput()
         val totalHands = mutableListOf<Hand>()
         var totalMoneyWon = 0
-        file.forEachLine {
+
+        input.forEachLine {
             totalHands.add(Hand(it.split(" ")[0], it.split(" ")[1].toInt()))
         }
         totalHands.sortByDescending {
@@ -77,13 +79,13 @@ object D07 {
         }
         totalHands.forEachIndexed { index, hand ->
             totalMoneyWon += hand.bid * (index+1)
-            println(hand)
         }
+
         return totalMoneyWon
 
     }
 
-    fun p2() {
-
+    override fun p2(): Int {
+        TODO()
     }
 }

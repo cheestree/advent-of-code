@@ -1,22 +1,27 @@
 package y2017.d02
 
+import common.Day
+import common.Utils.readInput
 import java.io.File
 
-object D02 {
-    fun corruptionChecksum(): Int{
-        val file = File("/y2017/d02/input.txt")
+object D02 : Day<Int, Int> {
+    override fun p1(): Int{
+        val input = readInput()
         var checkSum = 0
-        file.forEachLine {
+
+        input.forEachLine {
             val values = Regex("([0-9])+").findAll(it).map { it.value.toInt() }
             checkSum += (values.maxOrNull()?.minus(values.minOrNull()!!)!!)
         }
+
         return checkSum
     }
 
-    fun corruptionChecksum2(): Int{
-        val file = File("/y2017/d02/input.txt")
+    override fun p2(): Int{
+        val input = readInput()
         var checkSum = 0
-        file.forEachLine {
+
+        input.forEachLine {
             val values = Regex("([0-9])+").findAll(it).map { it.value.toInt() }.toList()
             checkSum += values.flatMap { num1 ->
                 values.mapNotNull { num2 ->
@@ -24,6 +29,7 @@ object D02 {
                 }
             }.first()
         }
+
         return checkSum
     }
 }

@@ -1,9 +1,11 @@
 package y2023.d09
 
+import common.Day
+import common.Utils.readInput
 import java.io.File
 
-object D09 {
-    fun p1() {
+object D09 : Day<Int, Int> {
+    override fun p1(): Int {
         fun recursivelyAdd(acc: Int, arr: List<Int>): Pair<Int, List<Int>> {
             if(arr.all { it == 0 }) return Pair(acc, arr)
             val newList = mutableListOf<Int>()
@@ -14,16 +16,18 @@ object D09 {
             return Pair(newAcc, newList)
         }
 
-        val file = File("src/main/kotlin/year2023/day9/input.txt")
+        val input = readInput()
         var acc = 0
-        file.forEachLine {
+
+        input.forEachLine {
             val arr = it.split(" ").map { it.toInt() }
             acc += recursivelyAdd(arr.last(), arr).first
         }
+
         return acc
     }
 
-    fun p2() {
+    override fun p2(): Int {
         fun recursivelySubtract(acc: Int, arr: List<Int>): Pair<Int, List<Int>> {
             if(arr.all { it == 0 }) return Pair(acc, arr)
             val newList = mutableListOf<Int>()
@@ -34,12 +38,14 @@ object D09 {
             return Pair(newAcc, newList)
         }
 
-        val file = File("src/main/kotlin/year2023/day9/input.txt")
+        val input = readInput()
         var acc = 0
-        file.forEachLine {
+
+        input.forEachLine {
             val arr = it.split(" ").map { it.toInt() }
             acc += recursivelySubtract(arr.first(), arr).first
         }
+
         return acc
     }
 }

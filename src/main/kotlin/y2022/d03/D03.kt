@@ -1,14 +1,16 @@
 package y2022.d03
 
+import common.Day
+import common.Utils.readInput
 import java.io.File
 import kotlin.sequences.forEach
 
-object D03 {
-    fun p1() {
-        val bufferedReader = File("src/main/kotlin/year2022/day3/input.txt").bufferedReader()
+object D03 : Day<Int, Int> {
+    override fun p1(): Int {
+        val input = readInput()
         var totalScore = 0
 
-        bufferedReader.useLines { lines ->
+        input.useLines { lines ->
             lines.forEach { l ->
                 val toCharArray = l.toCharArray()
                 val firstHalf = toCharArray.dropLast(toCharArray.size/2).toSet()
@@ -17,15 +19,16 @@ object D03 {
                 totalScore += if(charsIntersect in 'a'..'z') (charsIntersect - 96).code else (charsIntersect - 38).code
             }
         }
-        println(totalScore)
+
+        return totalScore
     }
 
-    fun p2() {
-        val bufferedReader = File("src/main/kotlin/year2022/day3/input.txt").bufferedReader()
+    override fun p2(): Int  {
+        val input = readInput()
         var totalScore = 0
         val array = mutableListOf<Set<Char>>()
 
-        bufferedReader.useLines { lines ->
+        input.useLines { lines ->
             lines.forEach { l ->
                 if(l.isNotEmpty()) {
                     val line = l.toCharArray().toSet()
@@ -37,8 +40,9 @@ object D03 {
                         array += line
                     }
                 }
-                println(totalScore)
             }
         }
+
+        return totalScore
     }
 }

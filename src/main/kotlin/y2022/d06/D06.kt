@@ -1,14 +1,16 @@
 package y2022.d06
 
+import common.Day
+import common.Utils.readInput
 import java.io.File
 import kotlin.sequences.forEach
 
-object D06 {
-    fun p1() {
-        val bufferedReader = File("src/main/kotlin/year2022/day6/input.txt").bufferedReader()
+object D06 : Day<Int, Int> {
+    override fun p1(): Int {
+        val input = readInput()
         var count = 0
 
-        bufferedReader.useLines { lines ->
+        input.useLines { lines ->
             lines.forEach { l ->
                 val uniqueLine = l.toCharArray().toList()
                 for(i in 0..uniqueLine.size){
@@ -16,15 +18,15 @@ object D06 {
                 }
             }
         }
-        println(count)
 
+        return count
     }
 
-    fun p2() {
-        val bufferedReader = File("src/main/kotlin/year2022/day6/input.txt").bufferedReader()
+    override fun p2(): Int {
+        val input = readInput()
         var count = 0
 
-        bufferedReader.useLines { lines ->
+        input.useLines { lines ->
             lines.forEach { l ->
                 val uniqueLine = l.toCharArray().toList()
                 for(i in 0..uniqueLine.size){
@@ -32,6 +34,7 @@ object D06 {
                 }
             }
         }
-        println(count)
+
+        return count
     }
 }

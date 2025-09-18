@@ -1,15 +1,17 @@
 package y2022.d07
 
-object D07 {
-    fun p1() {
+import common.Day
+
+object D07 : Day<Int, Int> {
+    override fun p1(): Int {
     /*
-        val bufferedReader = File("src/main/kotlin/year2022/day7/input.txt").bufferedReader()
+        val input = readInput()
         var memUsed = 0
         var previousOp = ""
         val directories = mutableListOf<FileDummy>()
         var currentDirectory = mutableListOf<FileDummy>()
 
-        bufferedReader.useLines { lines ->
+        input.useLines { lines ->
             lines.forEach { l ->
                 val line = l.split(" ")
                 when (line[0]){
@@ -22,7 +24,6 @@ object D07 {
                             ".." -> {
                             }
                             else -> {
-                                println(currentDirectory.first{ f -> f.name == line[2] }.list!!)
                                 currentDirectory = currentDirectory.first{ f -> f.name == line[2] }.list!!
                             }
                         }
@@ -43,7 +44,6 @@ object D07 {
                         }
                     }
                 }
-                println(currentDirectory)
             }
         }
     }
@@ -58,5 +58,10 @@ object D07 {
                 return if(list == null) this.size else getSize()
         }
     */
-        }
+        TODO()
+    }
+
+    override fun p2(): Int {
+        TODO()
+    }
 }

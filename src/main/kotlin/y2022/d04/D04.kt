@@ -1,14 +1,16 @@
 package y2022.d04
 
+import common.Day
+import common.Utils.readInput
 import java.io.File
 import kotlin.sequences.forEach
 
-object D04 {
-    fun p1() {
-        val bufferedReader = File("src/main/kotlin/year2022/day4/input.txt").bufferedReader()
+object D04 : Day<Int, Int> {
+    override fun p1(): Int {
+        val input = readInput()
         var count = 0
 
-        bufferedReader.useLines { lines ->
+        input.useLines { lines ->
             lines.forEach { l ->
                 val vals = l.split("-",",").map { it.toInt() }
                 val firstRange = ((vals[0]..vals[1]).toList())
@@ -17,14 +19,15 @@ object D04 {
                 count += if(firstRange.containsAll(secondRange) || (secondRange).containsAll(firstRange)) 1 else 0
             }
         }
-        println(count)
+
+        return count
     }
 
-    fun p2() {
-        val bufferedReader = File("src/main/kotlin/year2022/day4/input.txt").bufferedReader()
+    override fun p2(): Int {
+        val input = readInput()
         var count = 0
 
-        bufferedReader.useLines { lines ->
+        input.useLines { lines ->
             lines.forEach { l ->
                 val vals = l.split("-",",").map { it.toInt() }
                 val firstRange = ((vals[0]..vals[1]).toList())
@@ -33,6 +36,7 @@ object D04 {
                 count += if(firstRange.intersect(secondRange).isNotEmpty() || (secondRange).intersect(firstRange).isNotEmpty()) 1 else 0
             }
         }
-        println(count)
+
+        return count
     }
 }

@@ -1,17 +1,20 @@
 package y2023.d02
 
+import common.Day
+import common.Utils.readInput
 import java.io.File
 
-object D02 {
-    fun p1() {
-        val file = File("src/main/kotlin/year2023/day2/input.txt")
+object D02 : Day<Int, Int> {
+    override fun p1(): Int {
+        val input = readInput()
         var sumOfIds = 0
         val cubeHash = hashMapOf(
             "red" to 12,
             "green" to 13,
             "blue" to 14,
         )
-        file.forEachLine {
+
+        input.forEachLine {
             var gameStats = it.replace(";", ",").replace(":", ",").split(",").map { it.trim() }
             val gameId = gameStats[0].split(" ")[1]
             gameStats = gameStats.drop(1)
@@ -21,13 +24,15 @@ object D02 {
             }
             sumOfIds += gameId.toInt()
         }
+
         return sumOfIds
     }
 
-    fun p2() {
-        val file = File("src/main/kotlin/year2023/day2/input.txt")
+    override fun p2(): Int {
+        val input = readInput()
         var sumOfSets = 0
-        file.forEachLine {
+
+        input.forEachLine {
             val cubeHash = hashMapOf(
                 "red" to 0,
                 "green" to 0,
@@ -45,6 +50,7 @@ object D02 {
             }
             sumOfSets += cubeHash["red"]!! * cubeHash["green"]!! * cubeHash["blue"]!!
         }
+
         return sumOfSets
     }
 }
