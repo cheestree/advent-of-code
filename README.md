@@ -1,8 +1,8 @@
-# Advent of Code
+# :christmas_tree: Advent of Code
 
 A Kotlin-based repository for [Advent of Code](https://adventofcode.com/) solutions.
 
-## Structure
+## :triangular_ruler: Structure
 
 Solutions are organized by year and day:
 
@@ -14,7 +14,7 @@ src/main/kotlin/
 └── y2023/d01/       # Year 2023, Day 1
 ```
 
-## Running Solutions
+## :minidisc: Running solutions
 
 ```bash
 # Build the project
@@ -26,10 +26,10 @@ src/main/kotlin/
 
 Each day implements the `Day<T, Y>` interface with `p1()` and `p2()` methods for parts 1 and 2.
 
-## Progress
+## :battery: Progress
 
 - **2015:** Days 1-6
 - **2017:** Days 2, 4
 - **2021:** Days 1-3
 - **2022:** Days 1-7
-- **2023:** Days 1-4, 6-7, 9, 15 
+- **2023:** Days 1-4, 6-7, 9, 15
